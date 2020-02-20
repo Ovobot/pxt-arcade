@@ -294,6 +294,7 @@
         "keymap": true
     },
     "appTheme": {
+        "disableLiveTranslations": true,
         "logoUrl": "https://github.com/microsoft/pxt-arcade",
         "logo": "./static/logo.svg",
         "docsLogo": "./static/logo.svg",
