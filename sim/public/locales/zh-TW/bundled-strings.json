@@ -971,7 +971,7 @@
   "game.runtime": "返回遊戲開始以後的時間，以毫秒為單位。",
   "game.runtime|block": "運行時間（毫秒）",
   "game.setDialogCursor|block": "對話視窗的游標設為 %frame=screen_image_picker",
-  "game.setDialogFrame|block": "對話視窗的邊框設為 %frame=screen_image_picker",
+  "game.setDialogFrame|block": "對話視窗的邊框設為 %frame=dialog_image_picker",
   "game.setDialogTextColor|block": "對話視窗的文字顏色設為 %color=colorindexpicker",
   "game.setGameOverEffect": "設定當遊戲結束時要發生的效果",
   "game.setGameOverSound": "設定當玩家獲勝時要播放的音效。",

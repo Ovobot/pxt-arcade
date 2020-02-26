@@ -1004,7 +1004,7 @@
   "game.setDialogCursor": "更改用于显示在对话框左下角的光标的默认图像。\n* param cursor用于光标的图像",
   "game.setDialogCursor|block": "设置对话框光标为 %frame=screen_image_picker",
   "game.setDialogFrame": "将默认对话框更改为新图像。对话框\n分为三行和三列，用于定义对话框的外框。\n* param frame 一个宽度和高度可被三整除的方形图像",
-  "game.setDialogFrame|block": "设置对话框为 %frame=screen_image_picker",
+  "game.setDialogFrame|block": "设置对话框为 %frame=dialog_image_picker",
   "game.setDialogTextColor": "更改对话框中文本的颜色。\n* param color颜色的索引0-15",
   "game.setDialogTextColor|block": "设置对话框文本颜色为 %color=colorindexpicker",
   "game.setGameOverEffect": "设置游戏结束时发生的效果",
