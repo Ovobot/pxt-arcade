@@ -1,0 +1,287 @@
+{
+    "id": "arcade",
+    "name": "arcade",
+    "nickname": "arcade",
+    "thumbnailName": "MakeCode Arcade",
+    "title": "Microsoft MakeCode Arcade",
+    "description": "Develop your programming skills by quickly creating and modding retro arcade games with Blocks and JavaScript in the MakeCode editor",
+    "corepkg": "device",
+    "cloud": {
+        "workspace": false,
+        "sharing": true,
+        "thumbnails": true,
+        "importing": true,
+        "packages": true,
+        "publishing": true,
+        "githubPackages": true,
+        "cloudProviders": {
+            "github": {}
+        }
+    },
+    "compile": {
+        "useUF2": true,
+        "deployDrives": "(XTRON|PY)",
+        "deployFileMarker": "INFO_UF2.TXT",
+        "driveName": "XTRON",
+        "floatingPoint": true,
+        "taggedInts": true,
+        "nativeType": "thumb",
+        "gc": true,
+        "upgrades": [],
+        "webUSB": true,
+        "saveAsPNG": true,
+        "patches": {
+            "0.0.0 - *": [
+                {
+                    "type": "missingPackage",
+                    "map": {
+                        "(DigitalPin|AnalogPin|pins)\\.P\\d\\d?": "edge-connector",
+                        "serial\\.": "serial"
+                    }
+                }
+            ],
+            "0.0.0 - 0.1.1": [
+                {
+                    "type": "api",
+                    "map": {
+                        "controller\\.controlSprite": "controller.moveSprite",
+                        "controller\\.controlPlayer": "controller.movePlayer"
+                    }
+                }
+            ],
+            "0.0.0 - 0.3.23": [
+                {
+                    "type": "package",
+                    "map": {
+                        "local-multiplayer": ""
+                    }
+                }
+            ],
+            "0.0.0 - 0.3.24": [
+                {
+                    "type": "api",
+                    "map": {
+                        "sprites\\.createEmptySprite\\(([^)]+)\\)": "sprites.create(img`.`, $1)"
+                    }
+                },
+                {
+                    "type": "blockId",
+                    "map": {
+                        "keysdx": "keydx",
+                        "keysdy": "keydy"
+                    }
+                }
+            ],
+            "0.0.0 - 0.11.20": [
+                {
+                    "type": "api",
+                    "map": {
+                        "SpriteKind": "SpriteKindLegacy"
+                    }
+                }
+            ],
+            "0.0.0 - 0.14.57": [
+                {
+                    "type": "missingPackage",
+                    "map": {
+                        "scene\\.setTileMap": "color-coded-tilemap",
+                        "scene\\.setTile": "color-coded-tilemap",
+                        "scene\\.getTile": "color-coded-tilemap",
+                        "scene\\.getTilesByType": "color-coded-tilemap",
+                        "scene\\.placeOnRandomTile": "color-coded-tilemap",
+                        "scene\\.setTileAt": "color-coded-tilemap",
+                        "scene\\.onHitTile": "color-coded-tilemap",
+                        "\\.tileHitFrom": "color-coded-tilemap"
+                    }
+                }
+            ]
+        },
+        "switches": {},
+        "jsRefCounting": false,
+        "vtableShift": 2,
+        "utf8": true
+    },
+    "compileService": {
+        "buildEngine": "codal",
+        "githubCorePackage": "lancaster-university/codal",
+        "gittag": "v0.6.3",
+        "dockerImage": "pext/yotta:latest",
+        "codalTarget": {
+            "branches": {}
+        }
+    },
+    "variants": {
+        "stm32f401": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/stlink-v2.cfg]; source [find target/stm32f4x.cfg]",
+                "uf2Family": "0x57755a57",
+                "vtableShift": 4
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-big-brainpad",
+                    "url": "https://github.com/lancaster-university/codal-big-brainpad",
+                    "branch": "v1.1.4",
+                    "type": "git"
+                },
+                "codalBinary": "STM32",
+                "serviceId": "codal2stm32",
+                "dockerImage": "pext/yotta:latest"
+            }
+        },
+        "samd51": {
+            "compile": {
+                "hasHex": true,
+                "openocdScript": "source [find interface/cmsis-dap.cfg]; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
+                "openocdScriptAlt": "source [find interface/stlink-v2.cfg]; set CPUTAPID 0x2ba01477; set CHIPNAME at91samd51g19; source [find target/at91samdXX.cfg]",
+                "ramSize": 196608,
+                "flashEnd": 524288,
+                "uf2Family": "0x55114460",
+                "vtableShift": 4
+            },
+            "compileService": {
+                "codalTarget": {
+                    "name": "codal-itsybitsy-m4",
+                    "url": "https://github.com/lancaster-university/codal-itsybitsy-m4",
+                    "branch": "v0.2.6",
+                    "type": "git"
+                },
+                "codalBinary": "ITSYBITSY_M4",
+                "serviceId": "codal2samd51",
+                "dockerImage": "pext/yotta:latest"
+            }
+        },
+        "rpi": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "runtimeIsARM": true,
+                "vtableShift": 4,
+                "flashCodeAlign": 256,
+                "webUSB": false,
+                "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockermake",
+                "dockerImage": "pext/rpi:alsa",
+                "serviceId": "rpi"
+            }
+        },
+        "vm": {
+            "compile": {
+                "hasHex": true,
+                "useELF": true,
+                "flashCodeAlign": 256,
+                "webUSB": false,
+                "nativeType": "vm",
+                "stackAlign": 2
+            },
+            "compileService": {
+                "buildEngine": "dockercross",
+                "dockerImage": "pext/crossbuild",
+                "serviceId": "crossbuild",
+                "skipCloudBuild": true
+            }
+        }
+    },
+    "serial": {
+        "useEditor": true,
+        "log": true,
+        "editorTheme": {
+            "graphBackground": "#d9d9d9",
+            "lineColors": [
+                "#009DDC",
+                "#FB48C7",
+                "#40bf4a",
+                "#8073E5",
+                "#d25b33"
+            ]
+        }
+    },
+    "runtime": {
+        "mathBlocks": true,
+        "loopsBlocks": true,
+        "logicBlocks": true,
+        "variablesBlocks": true,
+        "textBlocks": true,
+        "functionBlocks": true,
+        "functionsOptions": {
+            "useNewFunctions": true,
+            "extraFunctionEditorTypes": [
+                {
+                    "typeName": "Sprite",
+                    "icon": "send",
+                    "defaultName": "mySprite"
+                }
+            ]
+        },
+        "listsBlocks": true,
+        "tilesetFieldEditorIdentity": "images._tile",
+        "bannedCategories": [
+            "pins",
+            "control",
+            "input",
+            "serial",
+            "power"
+        ]
+    },
+    "simulator": {
+        "autoRun": true,
+        "autoRunLight": false,
+        "emptyRunCode": "pxsim.pxtcore.updateScreen(new pxsim.RefImage(160, 120, 4))",
+        "aspectRatio": 0.85,
+        "dynamicBoardDefinition": true,
+        "keymap": true
+    },
+    "unsupportedBrowsers": [
+        {
+            "id": "ie"
+        }
+    ],
+    "uploadDocs": true,
+    "versions": {
+        "target": "0.15.16",
+        "pxt": "5.30.41"
+    },
+    "blocksprj": {
+        "id": "blocksprj",
+        "config": {
+            "name": "{0}",
+            "dependencies": {
+                "device": "*"
+            },
+            "description": "",
+            "files": [
+                "main.blocks",
+                "main.ts",
+                "README.md"
+            ],
+            "additionalFilePaths": []
+        },
+        "files": {
+            "main.blocks": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables></variables>\n  <block type=\"pxt-on-start\" x=\"0\" y=\"0\"></block>\n</xml>",
+            "main.ts": " ",
+            "README.md": " "
+        }
+    },
+    "tsprj": {
+        "id": "tsprj",
+        "config": {
+            "name": "{0}",
+            "dependencies": {
+                "device": "*"
+            },
+            "description": "",
+            "files": [
+                "main.ts",
+                "README.md"
+            ],
+            "additionalFilePaths": []
+        },
+        "files": {
+            "main.ts": " ",
+            "README.md": " "
+        }
+    }
+}

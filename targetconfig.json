@@ -1,0 +1,33 @@
+{
+    "packages": {
+        "approvedOrgs": [
+            "Microsoft"
+        ],
+        "approvedRepos": [
+            "adafruit/Circuit-Playground-Character-Icons",
+            "adafruit/pxt-seesaw",
+            "jwunderl/pxt-button-combos",
+            "jwunderl/pxt-color"
+        ],
+        "preferredRepos": [
+            "adafruit/Circuit-Playground-Character-Icons",
+            "adafruit/pxt-seesaw",
+            "jwunderl/pxt-button-combos",
+            "jwunderl/pxt-color"
+        ]
+    },
+    "galleries": {
+        "Tutorials": "tutorials",
+        "Blocks Games": "blocks-games",
+        "JavaScript Games": "javascript-games",
+        "Community Games": "community",
+        "Game Design Concepts": "concepts",
+        "Graphics and Math": "graphics-math",
+        "Lessons": "lessons",
+        "Courses": "courses",
+        "Hardware": "hardware",
+        "Coding Cards": "design-coding-cards",
+        "Build Your Game Videos": "videos",
+        "John Park's Workshop": "john-parks-workshop"
+    }
+}
