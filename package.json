@@ -41,6 +41,7 @@
     "pxt-arcade-sim": "microsoft/pxt-arcade-sim.git#v0.7.6"
   },
   "scripts": {
-    "serve": "node node_modules/pxt-core/built/pxt.js serve"
+    "serve": "node node_modules/pxt-core/built/pxt.js serve",
+    "pkg": "node node_modules/pxt-core/built/pxt.js staticpkg"
   }
 }
