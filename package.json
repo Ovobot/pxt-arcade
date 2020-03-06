@@ -42,6 +42,6 @@
   },
   "scripts": {
     "serve": "node node_modules/pxt-core/built/pxt.js serve",
-    "pkg": "node node_modules/pxt-core/built/pxt.js staticpkg --route static"
+    "pkg": "node node_modules/pxt-core/built/pxt.js staticpkg --route https://pxt-arcade.oss-cn-shanghai.aliyuncs.com/static"
   }
 }
