@@ -21,12 +21,6 @@
         "largeImageUrl": "/static/javascript-games/planet-putt-putt.gif"
     },
     {
-        "name": "Community Games",
-        "url": "/community",
-        "imageUrl": "/static/community/salvo/salvo.png",
-        "largeImageUrl": "/static/community/salvo/salvo.gif"
-    },
-    {
         "name": "Game Design Concepts",
         "url": "/concepts",
         "imageUrl": "/static/concepts/walking-hero.png",
@@ -77,7 +71,6 @@
 [Tutorials](/tutorials),
 [Blocks Games](/blocks-games),
 [JavaScript Games](/javascript-games),
-[Community Games](/community),
 [Game Design Concepts](/concepts),
 [Graphics and Math](/graphics-math),
 [Lessons](/lessons),
