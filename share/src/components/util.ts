@@ -151,7 +151,7 @@ export function shareScriptAsync(screenshotUri: string, mainTS: string, mainBloc
 
     const opts: HttpRequestOptions = {
         headers: {},
-        url: "https://arcade.makecode.com/api/scripts",
+        url: "https://arcade.ovobot.cn/api/scripts",//
         data: scrReq,
         allowGzipPost: true
     }
