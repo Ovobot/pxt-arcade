@@ -24,7 +24,8 @@
         "mixer---stm32": "file:../mixer---stm32",
         "buttons": "file:../buttons",
         "game---hw": "file:../game---hw",
-        "jacdac-game": "file:../jacdac-game"
+        "jacdac-game": "file:../jacdac-game",
+        "serial": "file:../serial"
     },
     "public": true,
     "skipLocalization": true,
