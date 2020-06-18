@@ -46,7 +46,7 @@
     {
         "name": "Hardware",
         "url": "/hardware",
-        "imageUrl": "/static/hardware/ghiarcade.jpg"
+        "imageUrl": "/static/hardware/astone.jpg"
     }
 ]
 ```

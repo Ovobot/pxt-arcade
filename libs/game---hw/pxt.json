@@ -6,7 +6,6 @@
         "settings": "file:../settings",
         "screen---st7735": "file:../screen---st7735",
         "buttons": "file:../buttons",
-        "power": "file:../power",
-        "serial": "file:../serial"
+        "power": "file:../power"
     }
 }
