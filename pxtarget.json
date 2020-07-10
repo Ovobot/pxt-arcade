@@ -433,13 +433,14 @@
         "debugger": true,
         "importExtensionFiles": true,
         "experiments": [
-            "python",
             "debugExtensionCode",
             "snippetBuilder",
             "experimentalHw",
             "recipes",
             "alwaysGithubItemBlocks"
         ],
+        "python": true,
+        "pythonToolbox": true,
         "extendEditor": true,
         "simScreenshot": true,
         "simScreenshotKey": "P",
