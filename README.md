@@ -1,12 +1,13 @@
-# Casual game editor using Microsoft MakeCode
+# Casual game editor using Microsoft MakeCode [![Build Status](https://travis-ci.org/microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/microsoft/pxt-arcade)
 
-* [Try it live!](https://arcade.makecode.com)
+* Try it [https://arcade.makecode.com](https://arcade.makecode.com)
+* [Forum](https://forum.makecode.com)
 
-[![Build Status](https://travis-ci.org/microsoft/pxt-arcade.svg?branch=master)](https://travis-ci.org/microsoft/pxt-arcade)
-[![Community Discord (chat)](https://img.shields.io/discord/448979533891371018.svg)](https://aka.ms/makecodecommunity)
-[Forum](https://forum.makecode.com)
+This repo contains the Arcade editor built with [Microsoft MakeCode (PXT)](https://github.com/microsoft/pxt).
 
-This repo contains an editor built with [Microsoft MakeCode (PXT)](https://github.com/microsoft/pxt).
+## Creating and editing a package
+
+In the editor, you will find a GitHub icon next to the save icon. Use the GitHub integration to build a library package. You do not need to install the local dev server; everything can happen in the editor.
 
 ## Local server setup
 
@@ -43,23 +44,22 @@ This command launches a local web server. Note that this web server is meant for
 npm run serve
 ```
 
-### Creating and editing a package
+### Refreshing the community.md file
 
-* go to ``/projects`` under the ``pxt-arcade`` folder
-* clone your package repo, say ``pxt-helloworld``
-* launch the server with ``npm run serve`` from the ``pxt-arcade`` folder using ``npm serve``
-* create a new project
-* go to **project settings** and click on **Edit settings as text**
-* add an entry in the dependency section that points to your project
-```
-    "dependencies": {
-        "circuit-playground": "*",
-        "helloworld": "file:../pxt-helloworld"
-    },
-```
-* click on the **Blocks** icon to reload the blocks.
+Run this command, then patch description, improve the screenshot (or record gifs) if necessary.
 
-Once this project is setup, simply reload the editor after making changes on disk.
+```
+pxt ddt featured-game --md docs/community.md
+```
+
+## Update playlists in markdown
+
+Get a Google API key and store it in the ``GOOGLE_API_KEY`` environment variables (turn on data from the app).
+
+```
+pxt downloadplaylists
+```
+
 
 ### How to create sprite packs
 
@@ -126,7 +126,7 @@ pxt link ../pxt
 pxt link ../pxt-common-packages
 ```
 
-## to run the local server
+### to run the local server
 
 From root github folder,
 
@@ -136,6 +136,28 @@ pxt serve --rebundle
 ```
 
 More instructions at https://github.com/microsoft/pxt#running-a-target-from-localhost
+
+### to watch for changes
+
+To rebuild automatically when changes are made, we need gulp.
+
+Install gulp:
+
+```
+npm install -g gulp
+```
+
+and in a seperate terminal from `pxt serve` and in the pxt/ folder, run:
+
+```
+gulp watch
+```
+
+## Viewing documents
+
+Documents are rendered at the server and are viewable when received by the browser. Special styles and extended
+formatting are used which prevent them from rendering properly as generalized Markdown. While you can browse them
+here in the repo, they are not meant to render properly as GitHub document.
 
 # Contributing
 

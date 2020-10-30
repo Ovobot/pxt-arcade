@@ -120,7 +120,7 @@ tiles.setTilemap(tiles.createTilemap(
 Find ``||loops:for element value of list||``
 and place it after the ``||scene:set tilemap to||`` block.
 
-```
+```blocks
 namespace myTiles {
     //% blockIdentity=images._tile
     export const tile0 = img`
@@ -173,7 +173,7 @@ for (let value of list) {
 
 ## Step 4
 
-Find ``||scene:set tile list to array of all tiles||`` in ``||scene:Scene||``.
+Find ``||scene:array of all locations||`` in ``||scene:Scene||``.
 Place it in the ``||loops:for element value of list||`` block on top of ``||variables:list||``.
 Select the tile you drew diagonally across the map.
 The loop will now run once for every tile of that type in the tilemap.
@@ -313,56 +313,52 @@ Make sure ``||variables:mySprite||`` is the ``||variables:variable||`` for the
 This will place the breadcrumbs on each ``||scene:tile||`` of the diagonal line.
 
 ```blocks
-let mySprite: Sprite = null
-scene.setTileMap(img`
-    2 7 7 7 7 7 7 7 7 7
-    2 2 2 7 7 7 7 7 7 7
-    7 7 2 2 2 7 7 7 7 7
-    7 7 7 7 2 7 7 7 7 7
-    7 7 7 7 2 7 7 7 7 7
-    7 7 7 7 2 2 2 2 2 7
-    7 7 7 7 7 7 7 7 2 7
-    7 7 7 7 7 7 7 7 2 2
-`)
-scene.setTile(2, img`
-    6 6 6 6 7 6 6 6 6 6 6 6 6 6 6 6
-    6 6 7 6 7 7 6 6 6 6 6 6 6 6 6 6
-    6 8 7 7 6 7 6 7 7 6 6 6 6 6 6 6
-    6 6 8 7 6 6 7 7 8 6 6 6 6 6 6 6
-    6 6 6 8 6 6 7 8 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 7 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 7 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 8 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 7 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 7 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 8 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 7 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-`, false)
-scene.setTile(7, img`
-    6 6 6 6 7 6 6 6 6 6 6 6 6 6 6 6
-    6 6 7 6 7 7 6 6 6 6 6 6 6 6 6 6
-    6 8 7 7 6 7 6 7 7 6 6 6 6 6 6 6
-    6 6 8 7 6 6 7 7 8 6 6 6 6 6 6 6
-    6 6 6 8 6 6 7 8 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 7 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 7 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 8 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 7 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 7 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 8 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 7 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-    6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
-`, false)
-let tile_list = scene.getTilesByType(2)
-for (let value of tile_list) {
-    mySprite = sprites.create(img`
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+tiles.setTilemap(tiles.createTilemap(
+            hex`1000100002010101010101010101010101010101020202010101010101010101010101010101020202010101010101010101010101010101020101010101010101010101010101010201010101010101010101010101010102020202020101010101010101010101010101010201010101010101010101010101010102020101010101010101010101010101010202010101010101010101010101010101020201010101010101010101010101010102020101010101010101010101010101010202010101010101010101010101010101020201010101010101010101010101010102010101010101010101010101010101010201010101010101010101010101010101`,
+            img`
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+                . . . . . . . . . . . . . . . .
+            `,
+            [myTiles.tile0,sprites.castle.tileDarkGrass3,sprites.castle.tileDarkGrass2],
+            TileScale.Sixteen
+        ))
+for (let value of tiles.getTilesByType(sprites.castle.tileDarkGrass2)) {
+    let mySprite = sprites.create(img`
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . d . . . . . . d . .
@@ -380,7 +376,7 @@ for (let value of tile_list) {
         . . . . d . . . . . d e d d . .
         . . . . . . . . . . d d d . . .
     `, SpriteKind.Player)
-    value.place(mySprite)
+    tiles.placeOnTile(mySprite, value)
 }
 ```
 

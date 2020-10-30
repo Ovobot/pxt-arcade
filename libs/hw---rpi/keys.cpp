@@ -82,7 +82,7 @@ static int readADC(int channel) {
     if (isPressed("BTN_" #s, (int)Key::s))                                                         \
     SET(s)
 
-static uint8_t pressedScanCodes[256];
+static uint8_t pressedScanCodes[1024];
 
 static int isPressed(const char *name, int keyPos) {
     static uint64_t parsedPin[(int)Key::EXIT + 1];
@@ -259,6 +259,8 @@ void initKeys() {
     DMESG("init keys");
     // music::playTone(0, 0); // start music process early
 
+    sleep_core_us(200000); // make sure screen update starts to avoid race on config
+
     if (getConfigString("SCAN_CODES")) {
         useScanCodes = 1;
         scanCodeFD = open(getConfigString("SCAN_CODES"), O_RDONLY);
@@ -273,6 +275,13 @@ void initKeys() {
     pthread_t disp;
     pthread_create(&disp, NULL, btnPoll, NULL);
     pthread_detach(disp);
+}
+
+//% expose
+void setupButton(int buttonId, int key) {
+    (void)buttonId;
+    (void)key;
+    // not needed on RPi
 }
 
 } // namespace pxt

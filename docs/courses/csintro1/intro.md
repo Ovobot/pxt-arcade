@@ -5,7 +5,7 @@ This section serves as a quick introduction to the @boardname@ environment, and 
 ```codecard
 [
 {
-    "name": "MakeCode",
+    "name": "MakeCode Orientation",
     "url": "/courses/csintro1/intro/makecode-orientation",
     "imageUrl": "/static/courses/csintro1/intro/makecode-orientation.gif"
 }, {
@@ -25,7 +25,7 @@ This section serves as a quick introduction to the @boardname@ environment, and 
     "url": "/courses/csintro1/intro/variable-math",
     "imageUrl": "/static/courses/csintro1/intro/variable-math.gif"
 }, {
-    "name": "Info Properties",
+    "name": "Info Variable Properties",
     "url": "/courses/csintro1/intro/info",
     "imageUrl": "/static/courses/csintro1/intro/info.gif"
 }
@@ -34,12 +34,15 @@ This section serves as a quick introduction to the @boardname@ environment, and 
 
 ## Lessons
 
-* [Orientation to Makecode](/courses/csintro1/intro/makecode-orientation)
+* [Makecode Orientation](/courses/csintro1/intro/makecode-orientation)
 * [Birthday Algorithm](/courses/csintro1/intro/birthday-algorithm)
 * [Sprites](/courses/csintro1/intro/sprites)
 * [Unplugged: Rock Paper Scissors](/courses/csintro1/intro/unplugged)
 * [Variable Math](/courses/csintro1/intro/variable-math)
 * [Info Variable Properties](/courses/csintro1/intro/info)
 
+## Flipgrid
+
+The [Flipgrid](https://info.flipgrid.com/) topic for the **Introduction** chapter: https://flipgrid.com/b769222e
 
 [CS Intro Home](/courses/csintro1)

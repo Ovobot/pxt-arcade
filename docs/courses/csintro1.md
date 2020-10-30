@@ -2,9 +2,17 @@
 
 ### ~hint
 
+#### Course Beta
+
 This course is currently in beta - this means that it is likely to have bugs and changes made fairly regularly. If you see anything that doesn't seem quite right, or if you have any suggestions, please file an issue on [github](https://github.com/microsoft/pxt-arcade).
 
 ### ~
+
+## Course on Flipgrid
+
+Flipcode for the **Intro to CS** course grid: **[csintroarcade](https://flipgrid.com/csintroarcade)**
+
+## Lessons
 
 ```codecard
 [
