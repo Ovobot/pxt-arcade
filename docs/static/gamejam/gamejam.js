@@ -35,7 +35,7 @@ var featured = [
         author: "Mario"
     },
     {
-        id: "17901-55867-81776-14236",
+        id: "27830-69912-67539-85378",
         title: "Snail Hike",
         author: "SPerkins25"
     },

@@ -12,7 +12,7 @@ Hey, let's make a game where wild strawberries are out to attack our lemon playe
 
 First, ``||scene:set background color||`` to ``purple``. Create a new sprite called ``||variables:mySprite||``. Click on the image editor icon, go to the image galler, and select the lemon. Put in code to ``||controller:move mySprite||`` with the controller.
 
-![Pick the lemon image](/static/tutorials/lemon-leak/pick-a-lemon.gif)
+![Pick the lemon image](/static/tutorials/lemon-leak/pick-a-lemon-js.gif)
 
 ```spy
 scene.setBackgroundColor(10)
@@ -117,7 +117,7 @@ game.onUpdateInterval(1000, function () {
         e e e e 2 e 2 2 e e e c . . . .
         e e e 2 e e c e c c c . . . . .
         . c c c c c c c . . . . . . . .
-    `, Math.randomRange(-50, 50), Math.randomRange(-50, 50))
+    `, randint(-50, 50), randint(-50, 50))
 })
 ```
 

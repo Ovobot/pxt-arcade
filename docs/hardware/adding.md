@@ -34,7 +34,13 @@ Other optional elements include:
 * an electrical expansion connector to support the use of plug-in accessories and connection of external 
 circuits (see [expansion coonnector](#pins))
 
-We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). These files are available in a separate github repo [here](https://github.com/microsoft/pxt-arcade-hardware-designs).
+### ~ tip
+
+#### Minimal Open Source Reference Design
+
+We have built a minimal open source hardware reference design for an Arcade board. This consists of a schematic (available as PDF and as Altium .SchDoc), a layout (available as Gerbers and related CAM files plus an Altium .PcbDoc), and a BoM (available as a Microsoft Excel file). These files are available at [https://github.com/microsoft/pxt-arcade-hardware-designs](https://github.com/microsoft/pxt-arcade-hardware-designs).
+
+### ~
 
 A firmware configuration system allows a lot of flexibility regarding specific component choices and circuit designs to meet the above specification, see [Configuration](#cf2). 
 
@@ -158,6 +164,17 @@ DISPLAY_CFG0 = 0x08
 DISPLAY_CFG1 = 0x0010ff
 DISPLAY_CFG2 = 0x1000004
 ```
+
+Note that the ILI9341 have 4 configuration pins IM3, IM2, IM1, IM0.
+The following configurations are supported:
+
+| IM3 | IM2 | IM1 | IM0 | Connection       |
+| --- | --- | --- | --- | ---------------- |
+|  0  |  0  |  0  |  0  | D[7:0]   - D7:D0 |
+|  1  |  0  |  0  |  1  | D[17:10] - D7:D0 |
+
+That is, in the first config connect pin D[7] to PA5, D[6] to PA4, etc.
+In the second config, connect D[17] to PA5, D[16] to PA4, etc.
 
 ### Buttons #buttons
 
